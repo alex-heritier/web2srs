@@ -1,0 +1,33 @@
+{
+    "name": "web2srs",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "subs2srs but for webpages",
+    "icons": {
+      "16": "image.png",
+      "32": "image.png",
+      "48": "image.png",
+      "128": "image.png"
+    },
+    "background": {
+      "persistent": false,
+      "scripts": ["background_script.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "css": ["style.css"],
+            "js": ["content_script.js"]
+        }
+     ],
+    "permissions": ["https://*.google.com/", "activeTab"],
+    "browser_action": {
+      "default_icon": {
+        "16": "icon2.png",
+        "32": "icon2.png",
+        "48": "icon2.png",
+        "128": "icon2.png"
+      },
+      "default_popup": "popup.html"
+    }
+  }
